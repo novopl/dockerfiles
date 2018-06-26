@@ -1,0 +1,26 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: docker:18.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run: ./build.sh
+      - run:
+          name: Push
+          command: |
+            docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
+            ./push.sh
+          filters:
+            branches:
+              only: master
+
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build

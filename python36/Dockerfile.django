@@ -1,0 +1,14 @@
+FROM python:3.6-slim
+
+RUN mkdir /app
+WORKDIR /app
+
+COPY files/django_requirements.txt /tmp/django_requirements.txt
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc libc6-dev zsh \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip install -r /tmp/django_requirements.txt \
+    && apt-get purge -y --auto-remove gcc libc6-dev
+
+CMD /bin/bash
