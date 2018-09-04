@@ -1,7 +1,4 @@
-FROM python:3.6-slim
+FROM python:3.6-alpine
 
 RUN mkdir /app
 WORKDIR /app
-
-
-CMD /bin/bash
