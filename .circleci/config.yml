@@ -1,26 +1,50 @@
-version: 2
+version: 2.1
+
+commands:
+  build_image:
+    description: Build a docker image and push it to DockerHub
+    parameters:
+      tag: { type: string }
+      srcdir: { type: string }
+    steps:
+      - run:
+          name: Build and push << parameters.tag >>
+          command: |
+            ./build-image-dir.sh \
+                ~/cache/dirstate \
+                "<< parameters.tag >>" \
+                "<< parameters.srcdir >>"
+
 
 jobs:
-  build:
+  build-all:
     docker:
-      - image: docker:18.05.0-ce-git
+      - image: cimg/base:2020.01
+#      - image: docker:18.05.0-ce-git
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
-      - run: ./build.sh
+      - setup_remote_docker
+      - restore_cache:
+          name: "Restoring dir state cache"
+          key: dirstate
       - run:
-          name: Push
-          command: |
-            docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
-            ./push.sh
-          filters:
-            branches:
-              only: master
+          name: Login to DockerHub
+          command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
+      - build_image:
+          tag: novopl/sphinx-ci:37
+          srcdir: sphinx-ci/37
+      - build_image:
+          tag: novopl/sphinx-ci:38
+          srcdir: sphinx-ci/38
+      - save_cache:
+          name: "Saving dir state cache"
+          key: dirstate
+          paths:
+            - ~/cache/dirstate
 
 
 workflows:
   version: 2
   main:
     jobs:
-      - build
+      - build-all

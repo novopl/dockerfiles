@@ -19,6 +19,7 @@ RUN \
         docker \
         libressl-dev \
         zlib-dev \
+        zip \
         ; \
     # Install pyenv
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash; \
