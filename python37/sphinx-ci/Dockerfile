@@ -5,6 +5,7 @@ USER root
 RUN apt-get update; \
     apt-get install -y --no-install-recommends \
         software-properties-common \
+        graphviz \
         default-jre; \
     apt-get clean; \
     pip install --no-cache-dir \
