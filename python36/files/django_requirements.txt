@@ -1,7 +1,7 @@
 asgi-redis<2.0
 channels<2.0
 daphne<2.0
-Django==1.11.5
+Django==1.11.28
 novo-jsobj==0.0.2
 psycopg2==2.7.3.1
 pytz==2017.2
