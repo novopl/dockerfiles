@@ -14,3 +14,6 @@ RUN apt-get update; \
         sphinx-rtd-theme==0.4.3 \
         m2r==0.2.1; \
     rm -rf /var/lib/apt/lists/*;
+
+
+WORKDIR /work
