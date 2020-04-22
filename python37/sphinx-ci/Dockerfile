@@ -13,6 +13,11 @@ RUN apt-get update; \
         sphinxcontrib-plantuml==0.18 \
         sphinx-rtd-theme==0.4.3 \
         m2r==0.2.1; \
-    rm -rf /var/lib/apt/lists/*;
+    rm -rf /var/lib/apt/lists/*; \
+    mkdir -p /plantuml; \
+    wget 'http://sourceforge.net/projects/plantuml/files/plantuml-jar-mit-1.2020.2.zip/download' \
+        -O /plantuml/plantuml-mit.zip; \
+    cd /plantuml && unzip -o plantuml-mit.zip; \
+    rm /plantuml/plantuml-mit.zip;
 
 WORKDIR /work
