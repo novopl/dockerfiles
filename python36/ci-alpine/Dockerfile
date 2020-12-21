@@ -25,9 +25,7 @@ RUN \
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash; \
     source /etc/profile;  \
     pyenv install 3.6.6; \
-    pyenv install 3.4.8; \
-    pyenv install 2.7.15; \
-    pyenv global 3.6.6 3.4.8 2.7.15; \
+    pyenv global 3.6.6; \
     # Install python dev dependencies into the main interpreter
     pip install --no-cache-dir -U pip setuptools; \
     pip install --no-cache-dir wheel; \
