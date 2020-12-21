@@ -31,6 +31,9 @@ jobs:
           name: Login to DockerHub
           command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
       - build_image:
+          tag: novopl/python36:ci-alpine
+          srcdir: python36/ci-alpine
+      - build_image:
           tag: novopl/python37:sphinx-ci
           srcdir: python37/sphinx-ci
       - build_image:
