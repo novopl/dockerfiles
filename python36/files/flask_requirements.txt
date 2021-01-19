@@ -9,7 +9,7 @@ jsonschema==2.6.0
 passlib==1.7.1
 psutil==5.4.6
 pyOpenSSL==18.0.0
-PyYAML==3.12
+PyYAML==5.1
 restible==0.2.22
 serafin==0.9.11
 SQLAlchemy==1.2.7
