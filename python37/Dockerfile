@@ -1,4 +1,7 @@
-FROM python:3.6-alpine
+FROM python:3.7
 
-RUN mkdir /app
-WORKDIR /app
+RUN \
+    apt-get update \
+    && apt-get install -y --no-install-recommends zip
+    && pip install --no-cache poetry
+    && rm -rf /var/lib/apt/lists/*

@@ -34,8 +34,8 @@ jobs:
           tag: novopl/python36:ci-alpine
           srcdir: python36/ci-alpine
       - build_image:
-          tag: novopl/python37:sphinx-ci
-          srcdir: python37/sphinx-ci
+          tag: novopl/python37
+          srcdir: python37
       - build_image:
           tag: novopl/python38:sphinx-ci
           srcdir: python38/sphinx-ci
