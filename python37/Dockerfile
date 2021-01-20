@@ -9,6 +9,7 @@ RUN \
     && apt update \
     && apt install -y --no-install-recommends \
         gh \
+        time \
         zip \
     && pip install --no-cache poetry \
     && rm -rf /var/lib/apt/lists/*
