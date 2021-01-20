@@ -33,9 +33,9 @@ jobs:
       - build_image:
           tag: novopl/python36
           srcdir: python36
-      - build_image:
-          tag: novopl/python36:ci-alpine
-          srcdir: python36/ci-alpine
+#      - build_image:
+#          tag: novopl/python36:ci-alpine
+#          srcdir: python36/ci-alpine
       - build_image:
           tag: novopl/python37
           srcdir: python37
