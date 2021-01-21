@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.6
 
 RUN \
     apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0 \
