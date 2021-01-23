@@ -31,17 +31,23 @@ jobs:
           name: Login to DockerHub
           command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
       - build_image:
-          tag: novopl/python36
-          srcdir: python36
+          tag: novopl/python:3.6
+          srcdir: python/3.6
 #      - build_image:
 #          tag: novopl/python36:ci-alpine
 #          srcdir: python36/ci-alpine
       - build_image:
-          tag: novopl/python37
-          srcdir: python37
+          tag: novopl/python:3.7
+          srcdir: python/3.7
       - build_image:
-          tag: novopl/python38:sphinx-ci
-          srcdir: python38/sphinx-ci
+          tag: novopl/python:3.8
+          srcdir: python/3.8
+      - build_image:
+          tag: novopl/python:3.8-fastapi
+          srcdir: python/3.8/fastapi
+#      - build_image:
+#          tag: novopl/python38:sphinx-ci
+#          srcdir: python38/sphinx-ci
       - save_cache:
           name: "Saving dir state cache"
           key: dirstate

@@ -1,7 +1,0 @@
-
-export PATH="$PATH"
-
-export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=gasp \
-    -Dswing.aatext=true\
-    -Dsun.java2d.opengl=true"
-

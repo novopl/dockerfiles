@@ -1,9 +1,0 @@
-version: '0.1'
-
-commands:
-  - peltak.extra.docker
-
-docker:
-  registry: novopl
-  images:
-    - name: 'python36:flask'
