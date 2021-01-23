@@ -33,21 +33,24 @@ jobs:
       - build_image:
           tag: novopl/python:3.6
           srcdir: python/3.6
-#      - build_image:
-#          tag: novopl/python36:ci-alpine
-#          srcdir: python36/ci-alpine
+      - build_image:
+          tag: novopl/python:3.6-dev
+          srcdir: python/3.6/dev
       - build_image:
           tag: novopl/python:3.7
           srcdir: python/3.7
       - build_image:
+          tag: novopl/python:3.7-dev
+          srcdir: python/3.7/dev
+      - build_image:
           tag: novopl/python:3.8
           srcdir: python/3.8
       - build_image:
+          tag: novopl/python:3.8-dev
+          srcdir: python/3.8/dev
+      - build_image:
           tag: novopl/python:3.8-fastapi
           srcdir: python/3.8/fastapi
-#      - build_image:
-#          tag: novopl/python38:sphinx-ci
-#          srcdir: python38/sphinx-ci
       - save_cache:
           name: "Saving dir state cache"
           key: dirstate
