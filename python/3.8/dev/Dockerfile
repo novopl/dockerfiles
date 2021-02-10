@@ -12,5 +12,4 @@ RUN \
         time \
         zip \
     && pip install --no-cache poetry \
-    && poetry config virtualenvs.create false \
     && rm -rf /var/lib/apt/lists/*
