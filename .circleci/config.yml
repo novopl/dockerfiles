@@ -34,6 +34,9 @@ jobs:
           tag: novopl/htpasswd
           srcdir: htpasswd
       - build_image:
+          tag: novopl/postgres:10.4
+          srcdir: postgres/10.4
+      - build_image:
           tag: novopl/python:3.6
           srcdir: python/3.6
       - build_image:
