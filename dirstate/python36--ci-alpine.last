@@ -1,6 +1,0 @@
-3cbc2158efcd3949925d05b97797d1e4f00829eb  /Users/novo/src/dockerfiles/python36/ci-alpine/Dockerfile
-d5ae0b5af4f7a44287a61016c230198a950f5316  /Users/novo/src/dockerfiles/python36/ci-alpine/Pipfile
-61652cd1568dcf2614df833eba241755eee34e89  /Users/novo/src/dockerfiles/python36/ci-alpine/VERSION
-acf59fe74fa2e45d88c0e203be7fc13c35459c8f  /Users/novo/src/dockerfiles/python36/ci-alpine/pelconf.yaml
-8e1337e10214bceeddf8e3a4a1fc7b0665521003  /Users/novo/src/dockerfiles/python36/ci-alpine/files/pyenv.sh
-943af10ac501582d56a06a94204e0eee141f3016  /Users/novo/src/dockerfiles/python36/ci-alpine/files/devrequirements.txt

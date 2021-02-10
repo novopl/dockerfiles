@@ -10,10 +10,13 @@ commands:
       - run:
           name: Build and push << parameters.tag >>
           command: |
-            ./build-image-dir.sh \
-                ~/cache/dirstate \
-                "<< parameters.tag >>" \
-                "<< parameters.srcdir >>"
+            cd "<< parameters.srcdir >>"
+
+            echo -e "-- \x1b[32mBuilding \x1b[35m<< parameters.tag >>\x1b[0m"
+            docker build -t << parameters.tag >> .
+
+            echo -e "-- \x1b[32mPushing \x1b[35m<< parameters.tag >>\x1b[0m"
+            docker push << parameters.tag >>
 
 
 jobs:
