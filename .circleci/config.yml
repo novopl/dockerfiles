@@ -43,17 +43,26 @@ jobs:
           tag: novopl/python:3.6
           srcdir: python/3.6
       - build_image:
+          tag: novopl/python:3.6-slim
+          srcdir: python/3.6/slim
+      - build_image:
           tag: novopl/python:3.6-dev
           srcdir: python/3.6/dev
       - build_image:
           tag: novopl/python:3.7
           srcdir: python/3.7
       - build_image:
+          tag: novopl/python:3.7-slim
+          srcdir: python/3.7/slim
+      - build_image:
           tag: novopl/python:3.7-dev
           srcdir: python/3.7/dev
       - build_image:
           tag: novopl/python:3.8
           srcdir: python/3.8
+      - build_image:
+          tag: novopl/python:3.8-slim
+          srcdir: python/3.8/slim
       - build_image:
           tag: novopl/python:3.8-dev
           srcdir: python/3.8/dev
