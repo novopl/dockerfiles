@@ -69,6 +69,9 @@ jobs:
       - build_image:
           tag: novopl/python:3.8-fastapi
           srcdir: python/3.8/fastapi
+      - build_image:
+          tag: novopl/python:3.8-fastapi-dev
+          srcdir: python/3.8/fastapi
       - save_cache:
           name: "Saving dir state cache"
           key: dirstate
