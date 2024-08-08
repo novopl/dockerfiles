@@ -34,6 +34,20 @@ jobs:
           name: Login to DockerHub
           command: docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASS
       - build_image:
+          tag: novopl/python:3.9
+          srcdir: python/3.9
+      - build_image:
+          tag: novopl/python:3.9-slim
+          srcdir: python/3.9/slim
+      # - build_image:
+      #     tag: novopl/python:3.9-fastapi
+      #     srcdir: python/3.9/fastapi
+      - build_image:
+          tag: novopl/python:3.9-dev
+          srcdir: python/3.9/dev
+      # - build_image:
+      #     tag: novopl/python:3.9-fastapi-dev
+      - build_image:
           tag: novopl/python:3.8
           srcdir: python/3.8
       - build_image:
@@ -55,23 +69,23 @@ jobs:
           tag: novopl/postgres:10.4
           srcdir: postgres/10.4
       - build_image:
-          tag: novopl/python:3.6
-          srcdir: python/3.6
-      - build_image:
-          tag: novopl/python:3.6-slim
-          srcdir: python/3.6/slim
-      - build_image:
-          tag: novopl/python:3.6-dev
-          srcdir: python/3.6/dev
-      - build_image:
-          tag: novopl/python:3.7
-          srcdir: python/3.7
-      - build_image:
-          tag: novopl/python:3.7-slim
-          srcdir: python/3.7/slim
-      - build_image:
-          tag: novopl/python:3.7-dev
-          srcdir: python/3.7/dev
+      #     tag: novopl/python:3.6
+      #     srcdir: python/3.6
+      # - build_image:
+      #     tag: novopl/python:3.6-slim
+      #     srcdir: python/3.6/slim
+      # - build_image:
+      #     tag: novopl/python:3.6-dev
+      #     srcdir: python/3.6/dev
+      # - build_image:
+      #     tag: novopl/python:3.7
+      #     srcdir: python/3.7
+      # - build_image:
+      #     tag: novopl/python:3.7-slim
+      #     srcdir: python/3.7/slim
+      # - build_image:
+      #     tag: novopl/python:3.7-dev
+      #     srcdir: python/3.7/dev
       - save_cache:
           name: "Saving dir state cache"
           key: dirstate
